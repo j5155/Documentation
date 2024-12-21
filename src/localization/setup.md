@@ -15,7 +15,21 @@ with the localizer that applies to you:
 
 ---
 ## Robot Coordinate Grid
-Use this diagram to find the offset of your localizer
+Use this diagram to find the offset of your localizer. This view is from the top of the robot looking downwards
+```
+                       forward (x positive)
+                                △
+                                |
+                                |
+                         /--------------\
+                         |              |
+                         |              |
+                         |           || |
+  left (y positive) <--- |           || |  
+                         |     ____     |
+                         |     ----     |
+                         \--------------/
+```
 [](robotCoord.png)
 
 ## Access
