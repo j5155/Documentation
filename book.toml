@@ -6,8 +6,8 @@ src = "src"
 title = "Pedro Pathing Documentation"
 
 [output.html]
-default-theme = "rust"
-preferred-dark-theme = "ayu"
+default-theme = "navy"
+preferred-dark-theme = "navy"
 git-repository-url = "https://github.com/Pedro-Pathing-Projects/documentation"
 git-repository-icon = "fa-github"
 edit-url-template = "https://github.com/Pedro-Pathing-Projects/documentation/issues"
