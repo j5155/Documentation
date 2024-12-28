@@ -69,8 +69,10 @@ After completing the tuning steps, test the localizer as follows:
 ## Note on ESD
 
 If your robot seems to:
+
 1. Turn to face a different direction when starting a path
 2. Actively turning to a fully incorrect angle (or miss with a large untunable/unfixable error)
+
 Your robot's IMU may have interference caused by ESD (electrostatic discharge).
 
 Consider grounding the robot with a [grounding strap](https://www.revrobotics.com/rev-31-1269/) and [reading this guide from FIRST to understand ESD more.](https://ftc-docs.firstinspires.org/en/latest/hardware_and_software_configuration/configuring/managing_esd/managing-esd.html)  
