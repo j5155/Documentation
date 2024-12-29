@@ -27,3 +27,26 @@ The heading PID ensures the robot maintains its rotational alignment, correcting
 ## Testing
 
 Repeat the tuning process with varying rotation angles and directions to ensure consistent performance.
+
+---
+
+## Input Tuned Values
+
+1. Open the `FConstants` class and navigate to the `static{}` block.
+2. Then, on a new line, add `FollowerConstants.drivePIDFCoefficients = new CustomFilteredPIDFCoefficients(P,I,D,T,F);`, with `P`, `I`, `D`, `T`, and `F` being the values you tuned for and inputted into FTC Dashboard.
+
+Note: In Step 2, you only need to make a new line if you are not using the quickstart, otherwise, you can just modify the line that already does this.  
+
+---
+
+## Secondary PIDF Tuning
+
+If you are going to use the secondary PIDF for heading error, you can tune the secondary PIDF coefficients by following the same process as the primary PIDF coefficients.  
+
+Input them into the `FollowerConstants.secondaryHeadingPIDFCoefficients` in the `FConstants` class the same way that the primary PIDF coefficients are inputted.
+
+---
+
+#### Congratulations, you’ve completed the Drive PIDF tuning!
+Now, move onto the next section to tune your Centripetal Scaling.
+

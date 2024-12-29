@@ -22,8 +22,9 @@ The **Lateral Zero Power Acceleration Tuner** measures how your robot decelerate
 ---
 
 ## Inputting the Results
+1. Open the `FConstants` class and navigate to the `static{}` block.
+2. Then, on a new line, add `FollowerConstants.lateralZeroPowerAcceleration = [OUTPUT]`, with `[OUTPUT]` being the deceleration rate output from the tuner.
 
-1. Open the `FollowerConstants` class.
-2. Replace the value of the `lateralZeroPowerAcceleration` variable on **line 98** with the deceleration rate output from the tuner.
+Note: In Step 2, you only need to make a new line if you are not using the quickstart, otherwise, you can just modify the line that already does this.  
 
 Congratulations, you’ve completed the lateral zero power acceleration tuning!

@@ -14,14 +14,14 @@ In Pedro Pathing, you can choose between using one or two PID controllers for ea
     - A single PID is responsible for managing all errors.
     - Recommended for simplicity and most use cases.
 
-2. **Two PID System (Legacy)**:
+2. **Two PID System**:
     - Includes a **main PID** for handling larger errors and a **secondary PID** for smaller corrections.
     - To enable this system:
-        1. Open `FollowerConstants`.
-        2. Set the following booleans (lines 157-159) to `true`:
-            - `useSecondaryTranslationalPID`
-            - `useSecondaryHeadingPID`
-            - `useSecondaryDrivePID`
+        1. Open `FConstants`.
+        2. Set any of the following booleans to `true` by adding, in a new line in the `static{}` block:
+            - `FollowerConstants.useSecondaryTranslationalPID = true`
+            - `FollowerConstants.useSecondaryHeadingPID = true`
+            - `FollowerConstants.useSecondaryDrivePID = true`
         3. Tune both the main and secondary PIDs:
             - **Main PID**: Moves the error into the secondary PID’s range without causing overshoot.
             - **Secondary PID**: Corrects small errors quickly and minimizes oscillations.

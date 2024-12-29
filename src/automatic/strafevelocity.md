@@ -23,7 +23,9 @@ The **Strafe Velocity Tuner** determines the velocity of your robot when strafin
 
 ## Inputting the Results
 
-1. Open the `FollowerConstants` class.
-2. Replace the value of the `yMovement` variable on **line 34** with the velocity output from the tuner.
+1. Open the `FConstants` class and navigate to the `static{}` block.
+2. Then, on a new line, add `FollowerConstants.yMovement = [OUTPUT]`, with `[OUTPUT]` being the velocity output from the tuner.
+
+Note: In Step 2, you only need to make a new line if you are not using the quickstart, otherwise, you can just modify the line that already does this.  
 
 Congratulations, you’ve completed the strafe velocity tuning!
