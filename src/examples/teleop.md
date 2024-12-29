@@ -31,7 +31,7 @@ public class ExampleTeleop_RobotCentric extends OpMode {
     /** This method is call once when init is played, it initializes the follower and subsystems **/
     @Override
     public void init() {
-        follower = new Follower(hardwareMap);
+        follower = new Follower(hardwareMap, fConstants, lConstants);
         follower.setStartingPose(startPose);
 
         claw = new ClawSubsystem(hardwareMap);
