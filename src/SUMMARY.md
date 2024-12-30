@@ -1,7 +1,7 @@
 # Summary
 [Overview](./overview.md)  
-[Migrating from the Old Quickstart](./migrating.md)
-[Prerequisites](./prerequisites.md)
+[Prerequisites](./prerequisites.md)  
+[Migrating from the Old Quickstart](./migrating.md)  
 
 ---
 # Localization
