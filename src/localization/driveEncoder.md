@@ -4,14 +4,35 @@
 * Encoders attached to all drive motors.
 
 ---
+
+## Default Values
+These are the default values of the DriveEncoderConstants. You can copy and paste this into your `static{}` block within `LConstants`:
+```java
+DriveEncoderConstants.forwardTicksToInches = 1;
+DriveEncoderConstants.strafeTicksToInches = 1;
+DriveEncoderConstants.turnTicksToInches = 1;
+
+DriveEncoderConstants.robot_Width = 1;
+DriveEncoderConstants.robot_Length = 1;
+
+DriveEncoderConstants.leftFrontEncoderDirection = Encoder.REVERSE;
+DriveEncoderConstants.rightFrontEncoderDirection = Encoder.FORWARD;
+DriveEncoderConstants.leftRearEncoderDirection = Encoder.REVERSE;
+DriveEncoderConstants.rightRearEncoderDirection = Encoder.FORWARD;
+```
+
+---
+
 ## Steps 
 ### 1. Encoder Setup
 
-Open the file `DriveEncoderLocalizer.java`. The motor names are already defined, so you don't need to modify them here.
+Open the file `LConstants`. The motor names are already defined in `FConstants`, so you don't need to modify them here.
+
 
 ### 2. Encoder Direction Calibration
 
-Ensure all encoders tick up when the robot moves forward. Reverse the direction of any encoders that don't follow this convention.
+1. 
+2. Ensure all encoders tick up when the robot moves forward. Reverse the direction of any encoders that don't follow this convention.
 
 ### 3. Localizer Tuning
 

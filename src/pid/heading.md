@@ -33,9 +33,9 @@ Repeat the tuning process with varying rotation angles and directions to ensure 
 ## Input Tuned Values
 
 1. Open the `FConstants` class and navigate to the `static{}` block.
-2. Then, on a new line, add `FollowerConstants.drivePIDFCoefficients = new CustomFilteredPIDFCoefficients(P,I,D,T,F);`, with `P`, `I`, `D`, `T`, and `F` being the values you tuned for and inputted into FTC Dashboard.
+2. Then, on a new line, add `FollowerConstants.headingPIDFCoefficients = new CustomPIDFCoefficients(P,I,D,F);`, with `P`, `I`, `D`, and `F` being the values you tuned for and inputted into FTC Dashboard.
 
-Note: In Step 2, you only need to make a new line if you are not using the quickstart, otherwise, you can just modify the line that already does this.  
+Note: In Step 2, you only need to make a new line if you are not using the quickstart, otherwise, you can just modify the line that already does this.
 
 ---
 

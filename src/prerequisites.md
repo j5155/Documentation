@@ -48,7 +48,7 @@ public FConstants { // This is how we change Follower Constants.
 ```
 
 #### 3. Then, we need to create another class with a static block to modify our specific localizer's constants. This will be refered to as `LConstants`.
-#### 4. We need to change the values for the localizer.
+#### 4. We need to change the values for the localizer. In each localizer's page, there will be a set of default values that you can copy. These are the default values provided in the quickstart:
 
 ```java 
 // This acts as a method of updating ThreeWheelConstants without direct access to it.
