@@ -4,72 +4,91 @@
 * Three odometry wheels connected to motor encoder ports on a hub.
 
 ---
+## Default Values
+These are the default values of the ThreeWheelConstants. You can copy and paste this into your `static{}` block within `LConstants`:
+```java
+ThreeWheelConstants.forwardTicksToInches = .001989436789;
+ThreeWheelConstants.strafeTicksToInches = .001989436789;
+ThreeWheelConstants.turnTicksToInches = .001989436789;
+ThreeWheelConstants.leftY = 1;
+ThreeWheelConstants.rightY = -1;
+ThreeWheelConstants.strafeX = -2.5;
+ThreeWheelConstants.leftEncoder_HardwareMapName = "leftFront";
+ThreeWheelConstants.rightEncoder_HardwareMapName = "rightRear";
+ThreeWheelConstants.strafeEncoder_HardwareMapName = "rightFront";
+ThreeWheelConstants.leftEncoderDirection = Encoder.REVERSE;
+ThreeWheelConstants.rightEncoderDirection = Encoder.REVERSE;
+ThreeWheelConstants.strafeEncoderDirection = Encoder.FORWARD;
+```
+
+---
 
 ## Steps
 ### 1. Odometry Wheel Setup
 
-Open the file `ThreeWheelLocalizer.java` and configure the following:
+Open the file `LConstants` and navigate to your `static{}` block. Configure the following:
 
-1. **Tracking Wheel Positions**: Enter the positions of your tracking wheels relative to the robot's center. Use inches for measurements.
-2. **Encoder Ports**: Replace the `deviceName` parameters with the names of the ports connected to your encoders.
+1. Encoder Ports:
+   - Replace the `ThreeWheelConstants.leftEncoder_HardwareMapName`, `ThreeWheelConstants.rightEncoder_HardwareMapName`, and `ThreeWheelConstants.strafeEncoder_HardwareMapName` with the names of the ports connected to your encoders.
+   - The names will match the hardware map names of the motor port that they are connected to.
+2. Odometry Measurements:
+   - Input the `ThreeWheelConstants.leftY`, `ThreeWheelConstants.rightY`, and `ThreeWheelConstants.strafeX` values.
+   - These values represent the distance of the odometry wheels from the robot's center of rotation on the [robot coordinate grid](./setup.md#robot-coordinate-grid).
+3. Encoder Directions:
+   - The Encoder Directions can be changed by changing the `Encoder` values for `ThreeWheelConstants.leftEncoderDirection`, `ThreeWheelConstants.rightEncoderDirection`, or `ThreeWheelConstants.strafeEncoderDirection`.
+   - Run the `Localization Test` and observe the encoder values
+   - If the x value ticks down when the robot moves forward, reverse the direction of both of the parallel pods (left and right).
+   - If the x value stays relatively constant when the robot drives forward, that means that one of the parallel pods (left and right) need to be reversed.
+   - If the y value ticks down when the robot moves forward, reverse the direction of the strafe pod.
 
-### 2. Encoder Direction Calibration
+### 2. Localizer Tuning
 
-Ensure the following:
+We need to adjust multipliers that convert encoder ticks into real-world measurements (inches or radians). This ensures your localizer's readings are accurate.
 
-* Forward encoder ticks up when the robot moves forward.
-* Strafe encoder ticks up when the robot moves to the left.
-
-### 3. Localizer Tuning
-
-#### a) Turn Localizer Tuner
-
-1. Position your robot facing a recognizable landmark, such as a field tile edge.
-2. Spin the robot counterclockwise for one full rotation (or a custom angle).
-3. The tuner will display two numbers:
-
-   * First number: Distance the robot thinks it has spun.
-   * Second number (multiplier): Replace `TURN_TICKS_TO_RADIANS` in the localizer with this value.
-
-4. (Optional) Run multiple tests and average the multipliers for better accuracy.
-
-#### b) Forward Localizer Tuner
+#### a) Forward Localizer Tuner
 
 1. Position a ruler alongside your robot.
-2. Push the robot forward by 48 inches (default distance).
+
+2. Push the robot forward by the desired distance (default is 48 inches).
+
 3. The tuner will display two numbers:
 
    * First number: Distance the robot thinks it has traveled.
-   * Second number (multiplier): Replace `FORWARD_TICKS_TO_INCHES` in the localizer with this value.
+
+   * Second number (multiplier)
 
 4. (Optional) Run multiple tests and average the multipliers for better accuracy.
+5. Input this value in `LConstants` as `ThreeWheelConstants.forwardTicksToInches = [multiplier]`, where `[multiplier]` is the value you obtained from the tuner.
 
-#### c) Lateral Localizer Tuner
+#### b) Lateral Localizer Tuner
 
 1. Position a ruler alongside your robot.
-2. Push the robot sideways (strafing) by 48 inches (default distance).
+
+2. Push the robot sideways (strafing) by the desired distance (default is 48 inches).
+
 3. The tuner will display two numbers:
 
    * First number: Distance the robot thinks it has traveled laterally.
-   * Second number (multiplier): Replace `STRAFE_TICKS_TO_INCHES` in the localizer with this value.
+
+   * Second number (multiplier)
 
 4. (Optional) Run multiple tests and average the multipliers for better accuracy.
+5. Input this value in `LConstants` as `ThreeWheelConstants.strafeTicksToInches = [multiplier]`, where `[multiplier]` is the value you obtained from the tuner.
 
----
+#### c) Turn Localizer Tuner
 
-## Testing Your Localizer
+1. Position your robot facing a recognizable landmark, like a field tile edge.
 
-After completing the tuning steps, you can test your localizer's accuracy.
+2. Spin the robot counterclockwise for one full rotation (or your desired angle).
 
-1. Go to `Localization Test` and drive your robot around.
+3. The tuner will display two numbers:
 
-2. Open the FTC Dashboard at http://192.168.43.1:8080/dash.
+   * First number: Distance the robot thinks it has spun.
 
-3. Switch the view to "field view" from the top right corner dropdown.
+   * Second number (multiplier)
 
-4. The dashboard should display the robot's position on the field.
-
-5. Observe the movements, moving the robot forward should make `x` increase and strafing left should make `y` increase.
+4. (Optional) Run multiple tests and average the multipliers for better accuracy.
+5. Input this value in `LConstants` as `ThreeWheelConstants.turnTicksToInches = [multiplier]`, where `[multiplier]` is the value you obtained from the tuner.
 
 ---
 

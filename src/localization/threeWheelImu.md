@@ -1,4 +1,4 @@
-# Setting Up Your Three Wheel Localizer with IMU
+# Setting Up Your Three Wheel IMU Localizer
 
 ## Prerequisites
 * Three odometry wheels connected to motor encoder ports on a hub.
@@ -6,52 +6,97 @@
 
 ---
 
+## Default Values
+These are the default values of the ThreeWheelIMUConstants. You can copy and paste this into your `static{}` block within `LConstants`:
+```java
+ThreeWheelIMUConstants.forwardTicksToInches = .001989436789;
+ThreeWheelIMUConstants.strafeTicksToInches = .001989436789;
+ThreeWheelIMUConstants.turnTicksToInches = .001989436789;
+ThreeWheelIMUConstants.leftY = 1;
+ThreeWheelIMUConstants.rightY = -1;
+ThreeWheelIMUConstants.strafeX = -2.5;
+ThreeWheelIMUConstants.leftEncoder_HardwareMapName = "leftFront";
+ThreeWheelIMUConstants.rightEncoder_HardwareMapName = "rightRear";
+ThreeWheelIMUConstants.strafeEncoder_HardwareMapName = "rightFront";
+ThreeWheelIMUConstants.leftEncoderDirection = Encoder.REVERSE;
+ThreeWheelIMUConstants.rightEncoderDirection = Encoder.REVERSE;
+ThreeWheelIMUConstants.strafeEncoderDirection = Encoder.FORWARD;
+ThreeWheelIMUConstants.IMU_HardwareMapName = "imu";
+ThreeWheelIMUConstants.IMU_Orientation = new RevHubOrientationOnRobot(RevHubOrientationOnRobot.LogoFacingDirection.UP, RevHubOrientationOnRobot.UsbFacingDirection.LEFT);
+```
+
+---
+
 ## Steps
-### 1. Setup
+### 1. Odometry Wheel Setup
 
-Open the file `ThreeWheelIMULocalizer.java` and configure the following:
+Open the file `LConstants` and navigate to your `static{}` block. Configure the following:
 
-1. **Tracking Wheel Positions**: Enter the positions of your tracking wheels relative to the robot's center. Use inches for measurements.
-2. **Encoder Ports**: Replace the `deviceName` parameters with the names of the ports connected to your encoders.
-3. **IMU Orientation**: Adjust the IMU's orientation to match your robot.
-   - [If you need help understanding the orientation, here's a guide from FIRST on how the IMU is oriented.](https://ftc-docs.firstinspires.org/en/latest/programming_resources/imu/imu.html#orthogonal-mounting)
+1. Encoder Ports:
+   - Replace the `ThreeWheelIMUConstants.leftEncoder_HardwareMapName`, `ThreeWheelIMUConstants.rightEncoder_HardwareMapName`, and `ThreeWheelIMUConstants.strafeEncoder_HardwareMapName` with the names of the ports connected to your encoders.
+   - The names will match the hardware map names of the motor port that they are connected to.
+2. Odometry Measurements:
+   - Input the `ThreeWheelIMUConstants.leftY`, `ThreeWheelIMUConstants.rightY`, and `ThreeWheelIMUConstants.strafeX` values.
+   - These values represent the distance of the odometry wheels from the robot's center of rotation on the [robot coordinate grid](./setup.md#robot-coordinate-grid).
+3. Encoder Directions:
+   - The Encoder Directions can be changed by changing the `Encoder` values for `ThreeWheelIMUConstants.leftEncoderDirection`, `ThreeWheelIMUConstants.rightEncoderDirection`, or `ThreeWheelIMUConstants.strafeEncoderDirection`.
+   - Run the `Localization Test` and observe the encoder values
+   - If the x value ticks down when the robot moves forward, reverse the direction of both of the parallel pods (left and right).
+   - If the x value stays relatively constant when the robot drives forward, that means that one of the parallel pods (left and right) need to be reversed.
+   - If the y value ticks down when the robot moves forward, reverse the direction of the strafe pod.
+4. IMU Setup:
+   - Replace the `ThreeWheelIMUConstants.IMU_HardwareMapName` with the name of the configuration for your IMU.
+   - Make sure that if you are using the built-in IMU, you have it configured to port 0 on the control hub.
+   - Define the orientation of the IMU on the robot by changing the `RevHubOrientationOnRobot` value for `ThreeWheelIMUConstants.IMU_Orientation`.
 
-### 2. Encoder Direction Calibration
+### 2. Localizer Tuning
 
-Ensure the following:
+We need to adjust multipliers that convert encoder ticks into real-world measurements (inches or radians). This ensures your localizer's readings are accurate.
 
-* Forward encoder ticks up when the robot moves forward.
-* Strafe encoder ticks up when the robot moves to the left.
+#### a) Forward Localizer Tuner
 
-### 3. Localizer Tuning
+1. Position a ruler alongside your robot.
 
-#### a) Turn Localizer Tuner (without IMU)
+2. Push the robot forward by the desired distance (default is 48 inches).
 
-1. Open FTC Dashboard and deselect the `useIMU` option in the `ThreeWheelIMULocalizer` dropdown.
-2. Position your robot facing a recognizable landmark, such as a field tile edge.
-3. Spin the robot counterclockwise for one full rotation (or a custom angle).
-4. The tuner will display two numbers:
+3. The tuner will display two numbers:
 
-   * First number: Distance the robot thinks it has spun.
-   * Second number (multiplier): Replace `TURN_TICKS_TO_RADIANS` in the localizer with this value.
+   * First number: Distance the robot thinks it has traveled.
 
-5. (Optional) Run multiple tests and average the multipliers for better accuracy.
-
-#### b) Forward and Lateral Tuning (with IMU)
-
-1. Re-enable `useIMU` in the FTC Dashboard.
-
-2. Forward Tuning:
-   * Position a ruler alongside your robot.
-   * Push the robot forward by 48 inches (default distance).
-   * The tuner will display the forward multiplier: Replace `FORWARD_TICKS_TO_INCHES` in the localizer with this value.
-
-3. Lateral Tuning:
-   * Position a ruler alongside your robot.
-   * Push the robot sideways (strafing) by 48 inches (default distance).
-   * The tuner will display the lateral multiplier: Replace `STRAFE_TICKS_TO_INCHES` in the localizer with this value.
+   * Second number (multiplier)
 
 4. (Optional) Run multiple tests and average the multipliers for better accuracy.
+5. Input this value in `LConstants` as `ThreeWheelIMUConstants.forwardTicksToInches = [multiplier]`, where `[multiplier]` is the value you obtained from the tuner.
+
+#### b) Lateral Localizer Tuner
+
+1. Position a ruler alongside your robot.
+
+2. Push the robot sideways (strafing) by the desired distance (default is 48 inches).
+
+3. The tuner will display two numbers:
+
+   * First number: Distance the robot thinks it has traveled laterally.
+
+   * Second number (multiplier)
+
+4. (Optional) Run multiple tests and average the multipliers for better accuracy.
+5. Input this value in `LConstants` as `ThreeWheelIMUConstants.strafeTicksToInches = [multiplier]`, where `[multiplier]` is the value you obtained from the tuner.
+
+#### c) Turn Localizer Tuner
+
+1. Position your robot facing a recognizable landmark, like a field tile edge.
+
+2. Spin the robot counterclockwise for one full rotation (or your desired angle).
+
+3. The tuner will display two numbers:
+
+   * First number: Distance the robot thinks it has spun.
+
+   * Second number (multiplier)
+
+4. (Optional) Run multiple tests and average the multipliers for better accuracy.
+5. Input this value in `LConstants` as `ThreeWheelIMUConstants.turnTicksToInches = [multiplier]`, where `[multiplier]` is the value you obtained from the tuner.
 
 ---
 
@@ -80,10 +125,11 @@ If your robot seems to:
 
 Your robot's IMU may have interference caused by ESD (electrostatic discharge).
 
-Consider grounding the robot with a [grounding strap](https://www.revrobotics.com/rev-31-1269/) and [reading this guide from FIRST to understand ESD more.](https://ftc-docs.firstinspires.org/en/latest/hardware_and_software_configuration/configuring/managing_esd/managing-esd.html)  
+Consider grounding the robot with a [grounding strap](https://www.revrobotics.com/rev-31-1269/) and [reading this guide from FIRST to understand ESD more.](https://ftc-docs.firstinspires.org/en/latest/hardware_and_software_configuration/configuring/managing_esd/managing-esd.html)
 
 If after all of this you cannot fix the issue, [switch to the non-IMU ThreeWheel localizer](https://pedropathing.com/localization/threeWheel.html), as it will not be as harshly affected by ESD and have more accuracy (compared to an interfered IMU).
 
 ---
 
 ## Congratulations on successfully tuning your localizer!
+

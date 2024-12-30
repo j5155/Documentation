@@ -63,7 +63,7 @@ We need to adjust multipliers that convert encoder ticks into real-world measure
 
    * First number: Distance the robot thinks it has traveled laterally.
 
-   * Second number (multiplier): This is the value you need to replace `STRAFE_TICKS_TO_INCHES` in the localizer. Replace the entire value, don't add or multiply it.
+   * Second number (multiplier)
 
 4. (Optional) Run multiple tests and average the multipliers for better accuracy.
 5. Input this value in `LConstants` as `DriveEncoderConstants.strafeTicksToInches = [multiplier]`, where `[multiplier]` is the value you obtained from the tuner.
@@ -78,7 +78,7 @@ We need to adjust multipliers that convert encoder ticks into real-world measure
 
    * First number: Distance the robot thinks it has spun.
 
-   * Second number (multiplier): This is the value you need to replace `TURN_TICKS_TO_RADIANS` in the localizer. Replace the entire value, don't add or multiply it.
+   * Second number (multiplier)
 
 4. (Optional) Run multiple tests and average the multipliers for better accuracy.
 5. Input this value in `LConstants` as `DriveEncoderConstants.turnTicksToInches = [multiplier]`, where `[multiplier]` is the value you obtained from the tuner.
