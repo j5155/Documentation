@@ -57,12 +57,17 @@ Ensure the following:
 
 ## Testing Your Localizer
 
-After completing the tuning steps, test the localizer as follows:
+After completing the tuning steps, you can test your localizer's accuracy.
 
-1. Go to Localization Test and drive your robot around.
-2. Open the FTC Dashboard at [http://192.168.43.1:8080/dash](http://192.168.43.1:8080/dash).
-3. Switch the view to "field view" from the top-right corner dropdown.
-4. Observe if the robot's movements appear accurate on the dashboard. Re-run tuning if necessary.
+1. Go to `Localization Test` and drive your robot around.
+
+2. Open the FTC Dashboard at http://192.168.43.1:8080/dash.
+
+3. Switch the view to "field view" from the top right corner dropdown.
+
+4. The dashboard should display the robot's position on the field.
+
+5. Observe the movements, moving the robot forward should make `x` increase and strafing left should make `y` increase.
 
 ---
 

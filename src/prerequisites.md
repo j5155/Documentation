@@ -10,7 +10,7 @@ Pedro Pathing is designed to work with **omnidirectional drives**, such as **mec
 ## Project Setup
 
 #### 1. If you want to use the quickstart, clone it: ```https://github.com/Pedro-Pathing/Quickstart.git```. Then move on to [Constants Setup.](#constants-setup)
-#### 2. If you want to add Pedro to your existing repository, add these two to your `repositories {}` block in `build.dependencies.gradle`:
+#### 2. If you want to add Pedro to your existing repository, add these two to your `repositories{}` block in `build.dependencies.gradle`:
 ```groovy
     maven { url = 'https://maven.brott.dev/' }
     maven { url= 'https://maven.pedropathing.com/' } 
