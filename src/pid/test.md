@@ -2,35 +2,26 @@
 
 ## Purpose
 
-After completing the tuning of all PIDs, it’s important to validate the overall performance of your robot under real-world conditions. This step ensures that your robot follows paths accurately and smoothly.
+After completing the tuning of all PIDFs and tuning centripetal scaling, it’s important to validate the overall performance of your robot under real-world conditions. This step ensures that your robot follows paths accurately and smoothly.
 
 ---
 
 ## Recommended Tests
 
-### 1. StraightBackAndForth
-- This test evaluates the robot’s ability to move forward and backward in a straight line without deviating laterally or rotating unnecessarily.
-- Look for:
-    - Minimal oscillations.
-    - Accurate stopping points.
-
-### 2. CurvedBackAndForth
-- This test assesses the robot’s handling of curved paths, focusing on centripetal corrections.
-- Look for:
-    - Smooth trajectory along the curve.
-    - Proper centripetal corrections (neither over-correcting nor under-correcting).
-
-### 3. Circle
+### 1. Circle
 - The **Circle** test is primarily for fun but can also be used to observe the robot’s handling of continuous curves.
 - Look for:
     - Smooth and consistent movement along the circular trajectory.
 
-### 4. Custom Paths
+### 2. Triangle
+- The **Triangle** test evaluates the robot’s ability to navigate sharp turns and straight segments.
+- It will drive in a triangular path, starting at the bottom-middle vertex.
+
+### 3. Custom Paths
 - Create custom paths to test the robot’s performance in scenarios closer to match conditions.
 - Look for:
     - Consistency across different types of paths.
     - Smooth transitions between path segments.
-###
 
 ---
 
@@ -45,9 +36,9 @@ After completing the tuning of all PIDs, it’s important to validate the overal
 ## Documentation and Support
 
 If further improvements are needed or you encounter issues, please join the [Pedro Pathing Discord Server](https://discord.gg/2GfC4qBP5s) to ask questions!
-
+Feel free to make an issue on this repo by clicking the edit button at the top right of the page.
 ---
 
 ## Final Thoughts
 
-Congratulations on completing your PID tuning and testing! Best of luck to your team this season!
+Congratulations on completing your PIDF tuning and testing! Best of luck to your team this season!

@@ -31,8 +31,15 @@ Pedro Pathing is designed to work with **omnidirectional drives**, such as **mec
 
 ## Constants Setup
 
-#### 1. Create a Class that has a static block to modify our `FollowerConstants` class. This will be refered to as `FConstants`.
-#### 2. We need to make sure to select our localizer type from the Localizers enum.
+**Note:** If you are ***not*** using the quickstart and ***not*** uses the names ```LConstants``` and ```FConstants``` , you will have to adapt the tuners by inputting your classes that have the ```static{}``` blocks into the PoseUpdater or into the Follower, depending on which one the tuner/test uses.  
+
+This is **NOT** recommended, as it is much easier to use the same class names as the quickstart.  
+
+###### In these docs, we will refer to the class that modifies the `FollowerConstants` as `FConstants` and the class that modifies the specific localizer's constants as `LConstants`.
+
+#### 1. There are default values saved within the library, you override them by changing their values in the ```static {}``` block in, for example, ```LConstants``` or ```FConstants```. These docs will
+#### 2. Create a Class that has a static block to modify our `FollowerConstants` class. This will be refered to as `FConstants`.
+#### 3. We need to make sure to select our localizer type from the Localizers enum.
 
 ```java 
 // This acts as a method of updating FollowerConstants without direct access to it.
@@ -47,8 +54,8 @@ public FConstants { // This is how we change Follower Constants.
 }
 ```
 
-#### 3. Then, we need to create another class with a static block to modify our specific localizer's constants. This will be refered to as `LConstants`.
-#### 4. We need to change the values for the localizer. In each localizer's page, there will be a set of default values that you can copy. These are the default values provided in the quickstart:
+#### 4. Then, we need to create another class with a static block to modify our specific localizer's constants. This will be refered to as `LConstants`.
+#### 5. We need to change the values for the localizer. In each localizer's page, there will be a set of default values that you can copy. These are the default values provided in the quickstart:
 
 ```java 
 // This acts as a method of updating ThreeWheelConstants without direct access to it.
@@ -69,6 +76,4 @@ public LConstants { // This is how we change ThreeWheelConstants.
     }
 }
 ```
-#### 5. There are default values saved within the library, you override them by changing their values in the ```static {}``` block in, for example, ```LConstants``` or ```FConstants```.
- **Note:** If you are ***not*** using the quickstart and ***not*** uses the names ```LConstants``` and ```FConstants``` , you will have to adapt the tuners by inputting your classes that have the ```static{}``` blocks into the PoseUpdater or into the Follower, depending on which one the tuner/test uses.
-This is **NOT** recommended, as it is much easier to use the same class names as the quickstart.
+ 
