@@ -15,6 +15,19 @@ The drive PID manages acceleration and braking along a path, ensuring smooth mot
 
 ---
 
+## Zero Power Acceleration Multiplier
+
+1. Open the `FConstants` class and navigate to the `static{}` block.
+2. Set the `zeroPowerAccelerationMultiplier` on a new line by adding `FollowerConstants.zeroPowerAccelerationMultiplier = [VALUE]`, where `[VALUE]` is the value you want to set it to.\
+
+Note: In Step 2, you only need to make a new line if you are not using the quickstart, otherwise, you can just modify the line that already does this.
+
+This value determines deceleration speed:
+- Higher values: Faster braking but more oscillations.
+- Lower values: Slower braking with fewer oscillations.
+
+---
+
 ## Tuning Process
 
 1. Adjust the PID constants (`drivePIDF`) in the **FollowerConstants** tab of FTC Dashboard.
@@ -27,11 +40,26 @@ The drive PID manages acceleration and braking along a path, ensuring smooth mot
 
 ---
 
-## Zero Power Acceleration Multiplier
+## Testing
 
-Before tuning, set the `zeroPowerAccelerationMultiplier` (line 107 in `FollowerConstants`). This value determines deceleration speed:
-- Higher values: Faster braking but more oscillations.
-- Lower values: Slower braking with fewer oscillations.
+Repeat the tuning process with varying rotation angles and directions to ensure consistent performance.
+
+---
+
+## Input Tuned Values
+
+1. Open the `FConstants` class and navigate to the `static{}` block.
+2. Then, on a new line, add `FollowerConstants.drivePIDFCoefficients = new CustomFilteredPIDFCoefficients(P,I,D,T,F);`, with `P`, `I`, `D`, `T`, and `F` being the values you tuned for and inputted into FTC Dashboard.
+
+Note: In Step 2, you only need to make a new line if you are not using the quickstart, otherwise, you can just modify the line that already does this.
+
+---
+
+## Secondary PIDF Tuning
+
+If you are going to use the secondary PIDF for drive error, you can tune the secondary PIDF coefficients by following the same process as the primary PIDF coefficients.
+
+Input them into the `FollowerConstants.secondaryDrivePIDFCoefficients` in the `FConstants` class the same way that the primary PIDF coefficients are inputted.
 
 ---
 
@@ -43,3 +71,8 @@ The drive PID uses a Kalman filter to smooth error responses:
 - Adjust the time constant (default `0.6`) to change the weighted average of derivatives.
 
 Feel free to experiment with these settings for optimal performance.
+
+---
+
+#### Congratulations, you’ve completed the drive PIDF tuning!
+Now, move onto the next section to tune your Centripetal Scaling.

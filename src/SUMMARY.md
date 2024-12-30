@@ -1,5 +1,7 @@
 # Summary
-[Overview](./overview.md)
+[Overview](./overview.md)  
+[Prerequisites](./prerequisites.md)  
+[Migrating from the Old Quickstart](./migrating.md)  
 
 ---
 # Localization
@@ -7,16 +9,12 @@
 - [Setup your localizer](./localization/setup.md)
   - [Drive Encoder Localizer](./localization/driveEncoder.md)
   - [Two Wheel Localizer](./localization/twoWheel.md)
-  - [Two Wheel + Pinpoint IMU Localizer](./localization/twoWheelPinpointImu.md)
   - [Three Wheel Localizer](./localization/threeWheel.md)
   - [Three Wheel + IMU Localizer](./localization/threeWheelImu.md)
   - [OTOS Localizer](./localization/otos.md)
-  - [Pinpoint Localizer](./localization/pinpoint.md) 
-  - [Roadrunner 0.5 to Pedro Localizer](./localization/rrToPedro.md)
-#
+  - [Pinpoint Localizer](./localization/pinpoint.md)
 
 ---
-
 # Automatic Tuners
 - [Prerequisites](./automatic/prerequisites.md)
 - [Velocity Tuners](./automatic/forwardvelocity.md)
@@ -25,10 +23,9 @@
 - [Zero Power Tuners](./automatic/forwardzeropower.md)
   - [Forward](./automatic/forwardzeropower.md)
   - [Lateral](./automatic/lateralzeropower.md)
-#
+
 
 ---
-
 # PID Tuners
 - [Intro](./pid/intro.md)
 - [Translational](./pid/translational.md)
@@ -36,24 +33,21 @@
 - [Drive](./pid/drive.md)
 - [Centripetal](./pid/centripetal.md)
 - [Test](./pid/test.md)
-#
 
 ---
-
+<!--
 # Examples
 - [Example Auto](./examples/auto.md)
 - [Example Teleop](./examples/teleop.md)
-#
-
----
+-->
 
 # Common Issues
 - [Path Overshoots at the End](./commonissues/pathovershoot.md)
 - [Convert Path(s) to a PathChain](./commonissues/pathtopathchain.md)
-#
+
 
 ---
 
-# Misc
+<!-- # Misc
 - [Pedro vs RoadRunner](./misc/pedrovsrr.md)
-#
+# -->

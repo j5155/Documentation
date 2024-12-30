@@ -1,37 +1,26 @@
-# Prerequisites for Pedro Pathing
-
-## Robot and Drive Type
-
-Pedro Pathing is designed to work with **omnidirectional drives**, such as **mecanum drive**. Currently, there is no support for swerve drives. You must have a robot with one of these supported drive systems to use Pedro Pathing.
-
----
+# Prerequisites for Automatic Tuners and PID Tuning
 
 ## Localizer
 
 You will need a tuned localizer to use Pedro Pathing effectively.
 
-**Important**: Before tuning Pedro Pathing, ensure your localizer is properly tuned. Check out the localization tuning guide under the localization tab.
+**Important**: Before tuning Pedro Pathing, ensure your localizer is properly tuned. Check out the [localization section](../localization/pick.md) if you need to do this.
 
 ---
 
-## FTC Dashboard
+## Follower Constants Value
+Before running the automatic tuners or the PID tests, you must update your `FConstants`, using the method explained in the general prerequisites.
 
-Using the [FTC Dashboard](http://192.168.43.1:8080/dash) will greatly aid in tuning your robot. Additionally, Team 16166 Watt'S Up created a **path visualizer**, which you can access [here](https://pedro-path-generator.vercel.app). 
-
-For reference, the older Desmos visualizer is available [here](https://www.desmos.com/calculator/3so1zx0hcd).
-
----
-
-## Units
-
-Pedro Pathing uses **inches** and **radians** for measurements. If you prefer **centimeters**, you must input all measurements in centimeters. However, note that tuners will still label outputs as "inches" even if you're using centimeters.
+Make you have these variables all defined if they are different from the defaults:
+- The Localizer you will be using (setup in [Localization Setup](../localization/setup.md#define-your-localizer))
+- Motor Configuration Names (setup in [Localization Setup](../localization/setup.md#define-your-motor-names-and-directions))
+- Motor Directions (setup in [Localization Setup](../localization/setup.md#define-your-motor-names-and-directions))
 
 ---
 
-## Initial Setup
-
-1. **Mass of the Robot**: Input the robot’s mass (in kg) into the `mass` variable on **line 86** in the `FollowerConstants` class under the `tuning` package.
-
-2. **Motor Reversal**: Ensure your motors are properly reversed in the `Follower` class constructor before running any OpModes.
-
-Now you're ready to begin tuning Pedro Pathing!
+## Mass of your Robot
+1. You will need to weigh the mass of your robot.
+2. Convert your mass into kilograms.
+3. Navigate to `FConstants` and into the `static{}` block.
+4. Input your mass onto a new line (or modify the existing line) by adding `FollowerConstants.mass = [MASS];`, where mass is the mass you determined above.
+---

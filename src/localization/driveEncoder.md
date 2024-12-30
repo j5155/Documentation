@@ -4,34 +4,41 @@
 * Encoders attached to all drive motors.
 
 ---
+
+## Default Values
+These are the default values of the DriveEncoderConstants. You can copy and paste this into your `static{}` block within `LConstants`:
+```java
+DriveEncoderConstants.forwardTicksToInches = 1;
+DriveEncoderConstants.strafeTicksToInches = 1;
+DriveEncoderConstants.turnTicksToInches = 1;
+
+DriveEncoderConstants.robot_Width = 1;
+DriveEncoderConstants.robot_Length = 1;
+
+DriveEncoderConstants.leftFrontEncoderDirection = Encoder.REVERSE;
+DriveEncoderConstants.rightFrontEncoderDirection = Encoder.FORWARD;
+DriveEncoderConstants.leftRearEncoderDirection = Encoder.REVERSE;
+DriveEncoderConstants.rightRearEncoderDirection = Encoder.FORWARD;
+```
+
+---
+
 ## Steps 
 ### 1. Encoder Setup
 
-Open the file `DriveEncoderLocalizer.java`. The motor names are already defined, so you don't need to modify them here.
+Open the file `LConstants`. The motor names are already defined in `FConstants`, so you don't need to modify them here.
 
 ### 2. Encoder Direction Calibration
 
-Ensure all encoders tick up when the robot moves forward. Reverse the direction of any encoders that don't follow this convention.
+2. Ensure all encoders tick up when the robot moves forward. Reverse the direction of any encoders that don't follow this convention.
+
+You can do this by changing the `Encoder.FORWARD` and `Encoder.REVERSE` values for each motor in the `LConstants` file.
 
 ### 3. Localizer Tuning
 
 We need to adjust multipliers that convert encoder ticks into real-world measurements (inches or radians). This ensures your localizer's readings are accurate.
 
-#### a) Turn Localizer Tuner
-
-1. Position your robot facing a recognizable landmark, like a field tile edge.
-
-2. Spin the robot counterclockwise for one full rotation (or your desired angle).
-
-3. The tuner will display two numbers:
-
-   * First number: Distance the robot thinks it has spun.
-
-   * Second number (multiplier): This is the value you need to replace `TURN_TICKS_TO_RADIANS` in the localizer. Replace the entire value, don't add or multiply it.
-
-4. (Optional) Run multiple tests and average the multipliers for better accuracy.
-
-#### b) Forward Localizer Tuner
+#### a) Forward Localizer Tuner
 
 1. Position a ruler alongside your robot.
 
@@ -41,11 +48,12 @@ We need to adjust multipliers that convert encoder ticks into real-world measure
 
    * First number: Distance the robot thinks it has traveled.
 
-   * Second number (multiplier): This is the value you need to replace `FORWARD_TICKS_TO_INCHES` in the localizer. Replace the entire value, don't add or multiply it.
+   * Second number (multiplier)
 
 4. (Optional) Run multiple tests and average the multipliers for better accuracy.
+5. Input this value in `LConstants` as `DriveEncoderConstants.forwardTicksToInches = [multiplier]`, where `[multiplier]` is the value you obtained from the tuner.
 
-#### c) Lateral Localizer Tuner
+#### b) Lateral Localizer Tuner
 
 1. Position a ruler alongside your robot.
 
@@ -55,9 +63,25 @@ We need to adjust multipliers that convert encoder ticks into real-world measure
 
    * First number: Distance the robot thinks it has traveled laterally.
 
-   * Second number (multiplier): This is the value you need to replace `STRAFE_TICKS_TO_INCHES` in the localizer. Replace the entire value, don't add or multiply it.
+   * Second number (multiplier)
 
 4. (Optional) Run multiple tests and average the multipliers for better accuracy.
+5. Input this value in `LConstants` as `DriveEncoderConstants.strafeTicksToInches = [multiplier]`, where `[multiplier]` is the value you obtained from the tuner.
+
+#### c) Turn Localizer Tuner
+
+1. Position your robot facing a recognizable landmark, like a field tile edge.
+
+2. Spin the robot counterclockwise for one full rotation (or your desired angle).
+
+3. The tuner will display two numbers:
+
+   * First number: Distance the robot thinks it has spun.
+
+   * Second number (multiplier)
+
+4. (Optional) Run multiple tests and average the multipliers for better accuracy.
+5. Input this value in `LConstants` as `DriveEncoderConstants.turnTicksToInches = [multiplier]`, where `[multiplier]` is the value you obtained from the tuner.
 
 ---
 
@@ -65,19 +89,15 @@ We need to adjust multipliers that convert encoder ticks into real-world measure
 
 After completing the tuning steps, you can test your localizer's accuracy.
 
-
-
 1. Go to `Localization Test` and drive your robot around.
 
 2. Open the FTC Dashboard at http://192.168.43.1:8080/dash.
 
 3. Switch the view to "field view" from the top right corner dropdown.
 
-4. The dashboard should display the robot's position on the field. Observe if the movements seem accurate.
+4. The dashboard should display the robot's position on the field. 
 
-5. If the movements appear inaccurate, re-run some of the tuning steps.
-
-
+5. Observe the movements, moving the robot forward should make `x` increase and strafing left should make `y` increase.
 
 --- 
 
