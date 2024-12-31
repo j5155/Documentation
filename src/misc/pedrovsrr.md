@@ -70,5 +70,5 @@ Official Docs: <https://rr.brott.dev/docs/v1-0/installation/>
 
 *Note: Both libraries excel in their specialized areas and cater to different needs. Choose the one that aligns with your priorities.*
 
-<!-- Created by J5155, Modifed/Edited by Baron -->
+<sub> Original concepts written by J5155, Modifed/Edited by Baron <sub> 
 
