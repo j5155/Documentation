@@ -1,26 +1,32 @@
 # Pedro Pathing vs Road Runner
 
-**Pedro Pathing** is a recently-created library (created early 2024, last updated 10/28/24)
-based on Wolfpack Machina's powerplay autonomous movement.
+**Pedro Pathing** is a path-following library (created early 2024, last updated 12/30/24)
+
 It uses a custom algorithm to follow trajectories with speed as a top priority.
 
 Docs: <https://pedropathing.com/>
 
-Quickstart: <https://github.com/Pedro-Pathing/Pedro-Pathing-Quickstart>
+Quickstart: <https://github.com/Pedro-Pathing/Quickstart>
+
+Library Repo: <https://github.com/Pedro-Pathing/PedroPathing>
+
+Discord: <https://discord.gg/2GfC4qBP5s>
+
+Visualizer: <https://pedro-path-generator.vercel.app/>
 
 **Pros of Pedro:**
 
-- Can make your bot drive faster
+- Makes your bot drive faster
 - Support for recent sensors (otos, pinpoint) is official/built in
 - Very good correction for unexpected disturbances
+- Not forced to use Actions or Blocking
 
 **Cons of Pedro:**
 
-- Newer, so potentially less stable and/or buggier 
-- All the code is in the quickstart instead of in a library, so updating is harder
-- Less people are familiar with it and able to help
-- Not necessarily time consistent
-- Uses nonstandard coordinate system by default/in visualizer (as of 11/24/24)
+- Newer, so potentially less stable
+- Smaller community of users (around 500 people in their Discord)
+- Uses nonstandard coordinate system in visualizer
+
 
 ---
 
@@ -44,15 +50,13 @@ Official Docs: <https://rr.brott.dev/docs/v1-0/installation/>
 - Very stable, minimal bugs if any
 - Time consistent autonomous
 - Tons of support, used by hundreds or thousands of teams
-- Tons of people able to help you in FTC Discord; someone has almost certainly had your problem before
-- Easier to update and integrate with compared to Pedro; code is split into libraries
+- Tons of people able to help you; someone has almost certainly had your problem before
 - Lots of projects integrating with it
-- Uses standard coordinate system
 
 **Cons of Roadrunner:**
 
-- Prioritizes time consistency above all else, meaning potentially worse speed and correction
+- Prioritizes time consistency above all else, meaning slower speed and worse correction
 - Support for recent sensors like otos and pinpoint is unofficial
   (though still exists, made by j5155)
+- Forced to use Actions & Blocking by default
 
-###### - Written by J5155

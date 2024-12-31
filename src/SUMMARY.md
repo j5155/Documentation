@@ -49,5 +49,5 @@
 ---
 
 # Misc
-<!-- - [Pedro vs RoadRunner](./misc/pedrovsrr.md) -->
 - [Local Changes to the Library](./misc/localchanges.md)
+- [Pedro vs RoadRunner](./misc/pedrovsrr.md) 
