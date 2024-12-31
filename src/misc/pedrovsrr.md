@@ -60,3 +60,4 @@ Official Docs: <https://rr.brott.dev/docs/v1-0/installation/>
   (though still exists, made by j5155)
 
 Written by j5155, Modifed/Edited by Baron
+Also available on [Cookbook](https://pedropathing.com/misc/pedrovsrr.html)
