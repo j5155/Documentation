@@ -48,7 +48,6 @@ Official Docs: <https://rr.brott.dev/docs/v1-0/installation/>
 **Pros of Roadrunner:**
 
 - Very stable, minimal bugs if any
-- Time-consistent autonomous
 - Lots of support; someone has almost certainly had your problem before
 - Lots of example projects
 
