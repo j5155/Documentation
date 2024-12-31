@@ -19,7 +19,7 @@ Visualizer: <https://pedro-path-generator.vercel.app/>
 - Makes your bot drive faster
 - Support for recent sensors (otos, pinpoint) is official/built in
 - Very good correction for unexpected disturbances
-- Not forced to use Actions or Blocking
+- Runs Async
 
 **Cons of Pedro:**
 
@@ -48,7 +48,7 @@ Official Docs: <https://rr.brott.dev/docs/v1-0/installation/>
 **Pros of Roadrunner:**
 
 - Very stable, minimal bugs if any
-- Time consistent autonomous
+- Time-consistent autonomous
 - Lots of support; someone has almost certainly had your problem before
 - Lots of example projects
 
@@ -57,7 +57,19 @@ Official Docs: <https://rr.brott.dev/docs/v1-0/installation/>
 - Prioritizes time consistency above all else, meaning slower speed and worse correction
 - Support for recent sensors like otos and pinpoint is unofficial
   (though still exists, made by j5155)
-- Forced to use Actions & Blocking by default
+- Default RR1.0 configurations enforce blocking actions
+
+# Summary Table
+
+| Feature                 | Pedro Pathing                        | Road Runner                           |
+|-------------------------|--------------------------------------|---------------------------------------|
+| **Primary Focus**       | Speed and adaptability               | Time consistency                      |
+| **Sensor Support**      | Official for Otos, Pinpoint          | Unofficial (community-made)           |
+| **Community Size**      | ~500 users                           | Large and established                 |
+| **Correction Handling** | Very responsive to external forces   | Decent at correction                  |
+| **Stability**           | Newer, less tested                   | Mature, highly stable                 |
+
+*Note: Both libraries excel in their specialized areas and cater to different needs. Choose the one that aligns with your priorities.*
 
 <!-- Created by J5155, Modifed/Edited by Baron -->
 
