@@ -49,9 +49,8 @@ Official Docs: <https://rr.brott.dev/docs/v1-0/installation/>
 
 - Very stable, minimal bugs if any
 - Time consistent autonomous
-- Tons of support, used by hundreds or thousands of teams
-- Tons of people able to help you; someone has almost certainly had your problem before
-- Lots of projects integrating with it
+- Lots of support; someone has almost certainly had your problem before
+- Lots of example projects
 
 **Cons of Roadrunner:**
 
