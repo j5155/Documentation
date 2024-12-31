@@ -57,7 +57,6 @@ Official Docs: <https://rr.brott.dev/docs/v1-0/installation/>
 - Prioritizes time consistency above all else, meaning slower speed and worse correction
 - Support for recent sensors like otos and pinpoint is unofficial
   (though still exists, made by j5155)
-- Default RR1.0 configurations enforce blocking actions
 
 # Summary Table
 
