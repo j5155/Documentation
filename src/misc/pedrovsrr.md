@@ -71,5 +71,5 @@ Official Docs: <https://rr.brott.dev/docs/v1-0/installation/>
 
 *Note: Both libraries excel in their specialized areas and cater to different needs. Choose the one that aligns with your priorities.*
 
-Written by j5155, Modifed/Edited by Baron
+<sub> Written by j5155, Modifed/Edited by Baron </sub>
 Also available on [Cookbook](https://pedropathing.com/misc/pedrovsrr.html)
