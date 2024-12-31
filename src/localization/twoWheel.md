@@ -1,7 +1,7 @@
-# Setting Up Your Three Wheel IMU Localizer
+# Setting Up Your Two Wheel Localizer
 
 ## Prerequisites
-* Three odometry wheels connected to motor encoder ports on a hub.
+* Two odometry wheels connected to motor encoder ports on a hub.
 * A properly configured IMU.
 
 ---

@@ -10,3 +10,6 @@ Follow all of the steps in the [Prerequisites](./prerequisites.md) page to setup
 6. Open your previous project / repository and copy the ***MODIFIED*** values from the `FollowerConstants` class.
 7. Modify the lines in the `static{}` block of the `FConstants` class in the new Quickstart to match the values you had before.
 8. If you have any other values that you have changed in the `FollowerConstants` class, that are not covered in the quickstart, copy them over as well by creating a new line in the `static{}` block of the `FConstants` class. Then do `FollowerConstants.[VARIABLE] = [VALUE];`, where `[VARIABLE]` is the variable you want to change from the default and where `[VALUE]` is the value you want to set it to.
+
+##### Note: You can locally change the library by following the steps in the [Local Changes to the Library](./misc/localchanges.md) page. 
+##### Though, changes such as disabling bulk reading are not needed (Pedro now doesn't bulk read) and a fix for different breaking behaviors (between driving forward and backward) is being tested.

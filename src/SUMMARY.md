@@ -35,19 +35,19 @@
 - [Test](./pid/test.md)
 
 ---
-<!--
+
 # Examples
 - [Example Auto](./examples/auto.md)
 - [Example Teleop](./examples/teleop.md)
--->
+
+---
 
 # Common Issues
 - [Path Overshoots at the End](./commonissues/pathovershoot.md)
 - [Convert Path(s) to a PathChain](./commonissues/pathtopathchain.md)
 
-
 ---
 
-<!-- # Misc
-- [Pedro vs RoadRunner](./misc/pedrovsrr.md)
-# -->
+# Misc
+<!-- - [Pedro vs RoadRunner](./misc/pedrovsrr.md) -->
+- [Local Changes to the Library](./misc/localchanges.md)
