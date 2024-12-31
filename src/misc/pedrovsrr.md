@@ -19,11 +19,10 @@ Visualizer: <https://pedro-path-generator.vercel.app/>
 - Makes your bot drive faster
 - Support for recent sensors (otos, pinpoint) is official/built in
 - Very good correction for unexpected disturbances
-- Not forced to use Actions or Blocking
 
 **Cons of Pedro:**
 
-- Newer, so potentially less stable
+- Newer, so potentially less stable 
 - Smaller community of users (around 500 people in their Discord)
 - Uses nonstandard coordinate system in visualizer
 
@@ -49,15 +48,15 @@ Official Docs: <https://rr.brott.dev/docs/v1-0/installation/>
 
 - Very stable, minimal bugs if any
 - Time consistent autonomous
-- Lots of support; someone has almost certainly had your problem before
-- Lots of example projects
+- Lots of support; someone has almost certainly had your problem before and it is easy to find help in FTC Discord
+- Lots of examples and other team's code to look at
+- Lots of integrating projects and other libraries
 
 **Cons of Roadrunner:**
 
-- Prioritizes time consistency above all else, meaning slower speed and worse correction
+- Prioritizes time consistency above all else, which can lead to worse correction
+- Slower speed by default
 - Support for recent sensors like otos and pinpoint is unofficial
   (though still exists, made by j5155)
-- Forced to use Actions & Blocking by default
 
-<!-- Created by J5155, Modifed/Edited by Baron -->
-
+Written by j5155, Modifed/Edited by Baron
