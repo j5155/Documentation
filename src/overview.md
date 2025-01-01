@@ -13,11 +13,13 @@ Pedro Pathing is tailored for teams looking to push the boundaries of autonomous
 
 This documentation covers a variety of critical topics, such as:
 
-- **Setup:** Step-by-step instructions to integrate Pedro Pathing into your robot’s codebase.
-- **Localization Methods:** Techniques for precise robot positioning, including odometry and sensor fusion approaches.
-- **Automatic Tuners:** Simplified tuners to help optimize system parameters like PID gains and Bézier control points.
-- **PID Tuning:** Comprehensive strategies for perfecting the reactive follower system.
-- **Code Examples:** Practical examples for both autonomous and teleop modes.
+- **[Setup:](prerequisites.md)** Step-by-step instructions to integrate Pedro Pathing into your robot’s codebase.
+- **[Localization Methods:](./localization/pick.md)** Techniques for precise robot positioning, including odometry and sensor fusion approaches.
+- **[Automatic Tuners:](./automatic/prerequisites.md)** Simplified tuners to help optimize system parameters like PID gains and Bézier control points.
+- **[PIDF Tuning:](./pidf/intro.md)** Comprehensive strategies for perfecting the reactive follower system.
+- **[Code Examples:](./examples/auto.md)** Practical examples for both autonomous and teleop modes.
+- **[Autonomous Breakdown:](./examples/buildauto.md)** A detailed breakdown on the example autonomous that uses Pedro Pathing.
+- **[Common Issues:](./commonissues/pathovershoot.md)** Solutions to common problems encountered while using Pedro Pathing.
 
 The sidebar provides quick access to each section, ensuring easy navigation through the documentation.
 

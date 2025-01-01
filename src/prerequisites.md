@@ -76,4 +76,6 @@ public LConstants { // This is how we change ThreeWheelConstants.
     }
 }
 ```
+
+#### 6. Make sure when you are creating opmodes to follow the guidelines that [Constants](./misc/constantsuser.md) sets down.
  

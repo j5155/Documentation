@@ -38,7 +38,7 @@ Open the file `LConstants` and navigate to your `static{}` block. Configure the 
    - The Encoder Directions can be changed by changing the `Encoder` values for `TwoWheelConstants.forwardEncoderDirection` or `TwoWheelConstants.strafeEncoderDirection`.
    - Run the `Localization Test` and observe the encoder values
    - If the x value ticks down when the robot moves forward, reverse the direction of the forward pod.
-   - If the y value ticks down when the robot moves forward, reverse the direction of the strafe pod.
+   - If the y value ticks down when the robot moves left, reverse the direction of the strafe pod.
 4. IMU Setup:
    - Replace the `TwoWheelConstants.IMU_HardwareMapName` with the name of the configuration for your IMU.
    - Make sure that if you are using the built-in IMU, you have it configured to port 0 on the control hub.

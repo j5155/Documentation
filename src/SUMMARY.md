@@ -26,17 +26,18 @@
 
 
 ---
-# PID Tuners
-- [Intro](./pid/intro.md)
-- [Translational](./pid/translational.md)
-- [Heading](./pid/heading.md)
-- [Drive](./pid/drive.md)
-- [Centripetal](./pid/centripetal.md)
-- [Test](./pid/test.md)
+# PIDF Tuners
+- [Intro](pidf/intro.md)
+- [Translational](pidf/translational.md)
+- [Heading](pidf/heading.md)
+- [Drive](pidf/drive.md)
+- [Centripetal](pidf/centripetal.md)
+- [Test](pidf/test.md)
 
 ---
 
 # Examples
+- [How to make an autonomous](./examples/buildauto.md)
 - [Example Auto](./examples/auto.md)
 - [Example Teleop](./examples/teleop.md)
 
@@ -50,4 +51,5 @@
 
 # Misc
 - [Local Changes to the Library](./misc/localchanges.md)
+- [Constants Class Overview](./misc/constantsuser.md)
 - [Pedro vs RoadRunner](./misc/pedrovsrr.md) 

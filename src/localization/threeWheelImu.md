@@ -43,7 +43,7 @@ Open the file `LConstants` and navigate to your `static{}` block. Configure the 
    - Run the `Localization Test` and observe the encoder values
    - If the x value ticks down when the robot moves forward, reverse the direction of both of the parallel pods (left and right).
    - If the x value stays relatively constant when the robot drives forward, that means that one of the parallel pods (left and right) need to be reversed.
-   - If the y value ticks down when the robot moves forward, reverse the direction of the strafe pod.
+   - If the y value ticks down when the robot strafe left, reverse the direction of the strafe pod.
 4. IMU Setup:
    - Replace the `ThreeWheelIMUConstants.IMU_HardwareMapName` with the name of the configuration for your IMU.
    - Make sure that if you are using the built-in IMU, you have it configured to port 0 on the control hub.

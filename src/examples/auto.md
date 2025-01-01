@@ -1,8 +1,8 @@
 # Example Auto
-This is an example auto taken from the [Pedro Pathing Beginner Quickstart](https://github.com/Pedro-Pathing-Projects/Beginner-Quickstart)
+This is an example auto taken from the [Quickstart](https://github.com/Pedro-Pathing/Quickstart)
 
 It serves as a **template** for an Into the Deep Bucket Side autonomous, and it scores a neutral preload and then grabs 3 from the spike marks and scores them before parking.
-It can also be viewed [here](https://github.com/Pedro-Pathing/Quickstart/blob/master/TeamCode/src/main/java/pedroPathing/examples/ExampleBucketAuto.java) on Github
+It can be viewed [here](https://github.com/Pedro-Pathing/Quickstart/blob/master/TeamCode/src/main/java/pedroPathing/examples/ExampleBucketAuto.java) on Github
 
 ```java
 package pedroPathing.examples;
@@ -15,6 +15,7 @@ import com.pedropathing.pathgen.Path;
 import com.pedropathing.pathgen.PathChain;
 import com.pedropathing.pathgen.Point;
 import com.pedropathing.util.Timer;
+import com.pedropathing.util.Constants;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import  com.qualcomm.robotcore.eventloop.opmode.OpMode;
 
@@ -271,7 +272,8 @@ public class ExampleBucketAuto extends OpMode {
         opmodeTimer = new Timer();
         opmodeTimer.resetTimer();
 
-        follower = new Follower(hardwareMap, FConstants.class, LConstants.class);
+        Constants.setConstants(FConstants.class, LConstants.class);
+        follower = new Follower(hardwareMap);
         follower.setStartingPose(startPose);
         buildPaths();
     }

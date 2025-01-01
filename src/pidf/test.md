@@ -33,10 +33,14 @@ After completing the tuning of all PIDFs and tuning centripetal scaling, it’s 
 
 ---
 
+## Autonomous Building
+If you are confused and lost on how to make a Pedro autonomous, check out [the Autonomous Building](../examples/buildauto.md) for a step-by-step guide on how to build an autonomous using Pedro.
+
 ## Documentation and Support
 
 If further improvements are needed or you encounter issues, please join the [Pedro Pathing Discord Server](https://discord.gg/2GfC4qBP5s) to ask questions!
 Feel free to make an issue on this repo by clicking the edit button at the top right of the page.
+
 ---
 
 ## Final Thoughts

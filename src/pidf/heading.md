@@ -47,6 +47,6 @@ Input them into the `FollowerConstants.secondaryHeadingPIDFCoefficients` in the 
 
 ---
 
-#### Congratulations, you’ve completed the Drive PIDF tuning!
-Now, move onto the next section to tune your Centripetal Scaling.
+#### Congratulations, you’ve completed the Heading PIDF tuning!
+Now, move onto the next section to tune your Drive PIDF Tuning.
 
