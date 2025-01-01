@@ -214,6 +214,3 @@ public void loop() {
     telemetry.update();
 }
 ```
-
-### Final Notes #
-This guide covers all aspects of creating a PedroPathing autonomous routine, from defining paths to managing states. Customize poses, paths, and conditions to fit your robot and game strategy.
