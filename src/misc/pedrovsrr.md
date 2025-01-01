@@ -17,9 +17,9 @@ Visualizer: <https://pedro-path-generator.vercel.app/>
 **Pros of Pedro:**
 
 - Makes your bot drive faster
-- Support for recent sensors (otos, pinpoint) is official/built in
-- Very good correction for unexpected disturbances
-- Not forced to use Actions or Blocking
+- Support for recent sensors (SparkFun OTOS, GoBiLDA Pinpoint) is official/built in
+- Strong correction for unexpected disturbances regardless of robot speed
+- Runs Async out of the box
 
 **Cons of Pedro:**
 
@@ -33,7 +33,7 @@ Visualizer: <https://pedro-path-generator.vercel.app/>
 **Road Runner** is a motion profiling-based follower library
 that includes a command-based action system and geometry.
 
-It was originally (0.5) created late 2020(?),
+It was originally (0.5) released in late 2020(?),
 with version 1.0 created mid-2023 and last updated 10/13.
 
 It prioritizes time consistency above all else.
@@ -48,15 +48,27 @@ Official Docs: <https://rr.brott.dev/docs/v1-0/installation/>
 **Pros of Roadrunner:**
 
 - Very stable, minimal bugs if any
-- Time consistent autonomous
-- Tons of support, used by hundreds or thousands of teams
-- Tons of people able to help you; someone has almost certainly had your problem before
-- Lots of projects integrating with it
+- Lots of support; someone has almost certainly had your problem before
+- Many example projects
 
 **Cons of Roadrunner:**
 
-- Prioritizes time consistency above all else, meaning slower speed and worse correction
-- Support for recent sensors like otos and pinpoint is unofficial
+- Generally slower by default
+- Prioritizes time consistency above all else, meaning that correction will suffer as robot speed increases.
+- Support for recent sensors like the OTOS and Pinpoint is unofficial
   (though still exists, made by j5155)
-- Forced to use Actions & Blocking by default
+
+# Summary Table
+
+| Feature                 | Pedro Pathing                        | Road Runner                           |
+|-------------------------|--------------------------------------|---------------------------------------|
+| **Primary Focus**       | Speed and adaptability               | Time consistency                      |
+| **Sensor Support**      | Official for OTOS, Pinpoint          | Unofficial (community-made)           |
+| **Community Size**      | ~500 users                           | Large and established                 |
+| **Correction Handling** | Very responsive to external forces   | Decent at correction                  |
+| **Stability**           | Newer, less tested                   | Mature, highly stable                 |
+
+*Note: Both libraries excel in their specialized areas and cater to different needs. Choose the one that aligns with your priorities.*
+
+<sub> Original concepts written by J5155, Modifed/Edited by Baron and Iris <3 <sub> 
 
