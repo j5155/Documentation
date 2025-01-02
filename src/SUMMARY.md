@@ -37,7 +37,7 @@
 ---
 
 # Examples
-- [How to make an autonomous](./examples/buildauto.md)
+- [Writing a PedroPathing Autonomous](./examples/buildauto.md)
 - [Example Auto](./examples/auto.md)
 - [Example Teleop](./examples/teleop.md)
 
