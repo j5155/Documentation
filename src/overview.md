@@ -11,7 +11,7 @@ Pedro Pathing is tailored for teams looking to push the boundaries of autonomous
 
 ---
 
-This documentation covers a variety of critical topics, such as:
+This documentation covers a variety of critical topics regarding Pedro Pathing, such as:
 
 - **[Setup:](prerequisites.md)** Step-by-step instructions to integrate Pedro Pathing into your robot’s codebase.
 - **[Localization Methods:](./localization/pick.md)** Techniques for precise robot positioning, including odometry and sensor fusion approaches.
@@ -21,13 +21,18 @@ This documentation covers a variety of critical topics, such as:
 - **[Autonomous Breakdown:](./examples/buildauto.md)** A detailed breakdown on the example autonomous that uses Pedro Pathing.
 - **[Common Issues:](./commonissues/pathovershoot.md)** Solutions to common problems encountered while using Pedro Pathing.
 
+However, this documentation also contains other, more general useful topics such as:
+- **[ADB Setup:](./general/adb.md)** A tutorial on how to set up ADB for wireless pushing.
+- **[PID Tutorial:](./general/pid.md)** A tutorial on how to tune PID loops for your robot.
+- **[XML Configuration Tutorial:](./general/xml.md)** A tutorial on how to configure your robot using XML.
+
 The sidebar provides quick access to each section, ensuring easy navigation through the documentation.
 
 ---
 
 Our code is stored in our [library](https://github.com/Pedro-Pathing/PedroPathing).
 
-This is the [Offical Pedro Pathing Quickstart](https://github.com/Pedro-Pathing/Quickstart).
+This is the [Official Pedro Pathing Quickstart](https://github.com/Pedro-Pathing/Quickstart).
 
 There is a visualizer for [Pedro Path Generation](https://pedro-path-generator.vercel.app/).
 
