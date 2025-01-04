@@ -58,5 +58,7 @@
 
 # General FTC
 - [ADB Tutorial](./general/adb.md)
+- [Differences in Android Studio Versions](./general/androidstudio.md)
+- [GitHub Student Developer Pack](./general/gitstudent.md)
 - [PID Tutorial](./general/pid.md)
 - [XML Configuration Tutorial](./general/xml.md)
