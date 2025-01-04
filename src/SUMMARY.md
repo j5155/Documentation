@@ -53,3 +53,10 @@
 - [Local Changes to the Library](./misc/localchanges.md)
 - [Constants Class Overview](./misc/constantsuser.md)
 - [Pedro vs RoadRunner](./misc/pedrovsrr.md) 
+
+---
+
+# General FTC
+- [ADB Tutorial](./general/adb.md)
+- [PID Tutorial](./general/pid.md)
+- [XML Configuration Tutorial](./general/xml.md)
