@@ -58,7 +58,10 @@
 
 # General FTC
 - [ADB Tutorial](./general/adb.md)
+- [Control Hub Ports Explanation](./general/chubexplanation.md)
 - [Differences in Android Studio Versions](./general/androidstudio.md)
+- [Expansion Hub Ports Explanation](./general/ehubexplanation.md)
+- [GitHub Commands Explanation](./general/githubcommands.md)
 - [GitHub Student Developer Pack](./general/gitstudent.md)
 - [PID Tutorial](./general/pid.md)
 - [Webhook Tutorial](./general/webhook.md)
