@@ -17,10 +17,10 @@
 ---
 # Automatic Tuners
 - [Prerequisites](./automatic/prerequisites.md)
-- [Velocity Tuners](./automatic/forwardvelocity.md)
+- [Velocity Tuners](./automatic/velocitytuners.md)
   - [Forward](./automatic/forwardvelocity.md)
   - [Strafe](./automatic/strafevelocity.md)
-- [Zero Power Tuners](./automatic/forwardzeropower.md)
+- [Zero Power Tuners](./automatic/zeropowertuners.md)
   - [Forward](./automatic/forwardzeropower.md)
   - [Lateral](./automatic/lateralzeropower.md)
 
