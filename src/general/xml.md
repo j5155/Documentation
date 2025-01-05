@@ -5,7 +5,7 @@ robot's REV Control Hub, allowing the user to avoid having to re-enter all the i
 
 In order to use xml configuration, a team should complete the following steps:
 
-1. Find the `xml` package in the `res` folder of the `TeamCode` module in your repository. There will already be a file here called `teamwebcamcalibrations`.xml`` from the FTC SDK.
+1. Find the `xml` package in the `res` folder of the `TeamCode` module in your repository. There will already be a file here called `teamwebcamcalibrations.xml` from the FTC SDK.
 2. Configure your robot and Lynx Modules (the Control and Expansion hubs).
 3. Configure the hardware devices on your robot under the correct hub.
 4. Configure any other devices that don't fall under your hubs. This generally includes certain types of webcams and other devices.
