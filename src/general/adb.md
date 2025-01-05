@@ -23,17 +23,25 @@ ADB is a versatile command-line tool that allows developers to communicate with 
 - If it is not visible, you can go to [View] > [Tool Windows] > [ADB Wi-fi].
 
 ### Step 3: Connecting to the robot
-- **Windows:**
-    1. Search for "Environment Variables" in the Start menu.
-    2. Edit the `Path` variable in the System Variables section.
-    3. Add the folder where ADB is located (e.g., `C:\adb`).
-- **macOS/Linux:**
-    - Add the following line to your shell configuration file (e.g., `.bashrc` or `.zshrc`):
+- **In the IDE**
+    1. Connect to your robot's Wi-Fi network.
+    2. Go to the "ADB Wi-fi" tab.
+    3. Your device should appear in the list, if it doesn't, click on the Restart ADB button.
+  4. Click on the device and then click on the "Connect" button.
+  5. You should now be connected to your robot, as shown on the top of the IDE (you should see that you are connected to your hub and that you can push code to it).
+- **Command Line**
+    1. Connect to your robot's Wi-Fi network.
+  2. Open a terminal/command prompt and run:
       ```bash
-      export PATH=$PATH:/path/to/adb
+      adb connect 192.168.43.1:5555
       ```
+     - This is the IP address of your control hub.
+    3. You should now see your device in the ADB tab. 
+  4. Click on the device and then click on the "Connect" button.
+  5. You should now be connected to your robot, as shown on the top of the IDE (you should see that you are connected to your hub and that you can push code to it).
 
 ### Step 4: General Guidelines
-- Open a terminal/command prompt and run:
-  ```bash
-  adb --version
+- When turning off the robot, make sure to click on the "Disconnect" button in the ADB Wi-Fi tab **first**.
+- If you are having trouble connecting, try restarting the ADB server by clicking on the "Restart ADB" button.
+- If you are still having trouble connecting, try to wait a couple of minutes, disconnect from the Wi-Fi network, turn off your computer, and then reconnect.
+- ADB is **always** finicky, so it may work one day but not work the next. 
