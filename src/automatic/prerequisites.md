@@ -11,7 +11,7 @@ You will need a tuned localizer to use Pedro Pathing effectively.
 ## Follower Constants Value
 Before running the automatic tuners or the PID tests, you must update your `FConstants`, using the method explained in the general prerequisites.
 
-Make you have these variables all defined if they are different from the defaults:
+Make sure you have these variables all defined if they are different from the defaults:
 - The Localizer you will be using (setup in [Localization Setup](../localization/setup.md#define-your-localizer))
 - Motor Configuration Names (setup in [Localization Setup](../localization/setup.md#define-your-motor-names-and-directions))
 - Motor Directions (setup in [Localization Setup](../localization/setup.md#define-your-motor-names-and-directions))
