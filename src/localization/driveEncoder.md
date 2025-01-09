@@ -28,13 +28,18 @@ DriveEncoderConstants.rightRearEncoderDirection = Encoder.FORWARD;
 
 Open the file `LConstants`. The motor names are already defined in `FConstants`, so you don't need to modify them here.
 
-### 2. Encoder Direction Calibration
+### 2. Robot Width and Length
+
+Measure your robot's wheelbase in inches, the length - the distance from the forward and back wheels - and width - the distance between the left and right wheels.
+Set `DriveEncoderConstants.robot_Width` and `DriveEncoderConstants.robot_Length` to the values you found above.
+
+### 3. Encoder Direction Calibration
 
 2. Ensure all encoders tick up when the robot moves forward. Reverse the direction of any encoders that don't follow this convention.
 
 You can do this by changing the `Encoder.FORWARD` and `Encoder.REVERSE` values for each motor in the `LConstants` file.
 
-### 3. Localizer Tuning
+### 4. Localizer Tuning
 
 We need to adjust multipliers that convert encoder ticks into real-world measurements (inches or radians). This ensures your localizer's readings are accurate.
 
