@@ -18,8 +18,6 @@ The translational PID ensures the robot follows a straight path without lateral 
 ## Tuning Process
 
 1. Push the robot laterally (left or right) to test its correction response.
-    - The robot should return to its path without rotating.
-    - If the robot rotates, disable `useHeading`.
 2. Adjust the PID constants (`translationalPIDF`) in the **FollowerConstants** tab of FTC Dashboard.
     - **Goal**: Minimize oscillations while maintaining accuracy.
 
