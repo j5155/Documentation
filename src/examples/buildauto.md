@@ -122,56 +122,56 @@ public void autonomousPathUpdate() {
             break;
 
         case 1: // Wait until the robot is near the scoring position
-            if (follower.getPose().getX() > (scorePose.getX() - 1) && follower.getPose().getY() > (scorePose.getY() - 1)) {
+            if (!follower.isBusy()) {
                 follower.followPath(grabPickup1, true);
                 setPathState(2);
             }
             break;
 
         case 2: // Wait until the robot is near the first sample pickup position
-            if (follower.getPose().getX() > (pickup1Pose.getX() - 1) && follower.getPose().getY() > (pickup1Pose.getY() - 1)) {
+            if (!follower.isBusy()) {
                 follower.followPath(scorePickup1, true);
                 setPathState(3);
             }
             break;
 
         case 3: // Wait until the robot returns to the scoring position
-            if (follower.getPose().getX() > (scorePose.getX() - 1) && follower.getPose().getY() > (scorePose.getY() - 1)) {
+            if (!follower.isBusy()) {
                 follower.followPath(grabPickup2, true);
                 setPathState(4);
             }
             break;
 
         case 4: // Wait until the robot is near the second sample pickup position
-            if (follower.getPose().getX() > (pickup2Pose.getX() - 1) && follower.getPose().getY() > (pickup2Pose.getY() - 1)) {
+            if (!follower.isBusy()) {
                 follower.followPath(scorePickup2, true);
                 setPathState(5);
             }
             break;
 
         case 5: // Wait until the robot returns to the scoring position
-            if (follower.getPose().getX() > (scorePose.getX() - 1) && follower.getPose().getY() > (scorePose.getY() - 1)) {
+            if (!follower.isBusy()) {
                 follower.followPath(grabPickup3, true);
                 setPathState(6);
             }
             break;
 
         case 6: // Wait until the robot is near the third sample pickup position
-            if (follower.getPose().getX() > (pickup3Pose.getX() - 1) && follower.getPose().getY() > (pickup3Pose.getY() - 1)) {
+            if (!follower.isBusy()) {
                 follower.followPath(scorePickup3, true);
                 setPathState(7);
             }
             break;
 
         case 7: // Wait until the robot returns to the scoring position
-            if (follower.getPose().getX() > (scorePose.getX() - 1) && follower.getPose().getY() > (scorePose.getY() - 1)) {
+            if (!follower.isBusy()) {
                 follower.followPath(park, true);
                 setPathState(8);
             }
             break;
 
         case 8: // Wait until the robot is near the parking position
-            if (follower.getPose().getX() > (parkPose.getX() - 1) && follower.getPose().getY() > (parkPose.getY() - 1)) {
+            if (!follower.isBusy()) {
                 setPathState(-1); // End the autonomous routine
             }
             break;
