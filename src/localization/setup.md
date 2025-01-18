@@ -31,20 +31,7 @@ FollowerConstants.rightRearMotorDirection = DcMotorSimple.Direction.FORWARD;
 
 ## Robot Coordinate Grid
 Use this diagram to find the offset of your localizer. This view is from the top of the robot looking downwards
-```
-                       forward (x positive)
-                                △
-                                |
-                                |
-                         /--------------\
-                         |              |
-                         |              |
-                         |           || |
-  left (y positive) <--- |           || |  
-                         |     ____     |
-                         |     ----     |
-                         \--------------/
-```
+![coordinategrid](odometry.png)
 
 ## Access
 To begin setting up your localizer, go to your class with a `static{}` block, where you will be changing your Localizer's constants (In the Quickstart, this class is called `LConstants`).
